@@ -1,0 +1,10 @@
+{
+  "description": "This premium corporate website connects clients with reliable sand and construction material supply services, showcasing quality offerings and professional support.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
