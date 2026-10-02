@@ -118,22 +118,22 @@ export default function ReviewsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F6F2]">
+    <div className="min-h-screen bg-[#F8F6F2] pb-24 sm:pb-0">
       {/* Hero */}
-      <section className="bg-[#14202B] pt-32 pb-16">
+      <section className="bg-[#14202B] pt-28 sm:pt-32 pb-12 sm:pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-2">
             <p className="text-[#C89249] text-xs font-bold tracking-widest uppercase mb-4">Testimonials</p>
-            <h1 className="text-5xl font-extrabold text-white mb-4">Customer Reviews</h1>
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-4">Customer Reviews</h1>
             <div className="gold-divider mx-auto mb-8" />
             <p className="text-white/50 text-sm italic">Real reviews from verified customers</p>
           </div>
 
           {/* Rating Overview */}
-          <div className="mt-12 bg-[#1C2C3A] border border-[#C89249]/20 rounded-2xl p-8 max-w-3xl mx-auto">
+          <div className="mt-12 bg-[#1C2C3A] border border-[#C89249]/20 rounded-2xl p-5 sm:p-8 max-w-3xl mx-auto">
             <div className="grid sm:grid-cols-2 gap-8 items-center">
               <div className="text-center">
-                <p className="text-[#C89249] text-7xl font-extrabold">{avgRating.toFixed(1)}</p>
+                <p className="text-[#C89249] text-6xl sm:text-7xl font-extrabold">{avgRating.toFixed(1)}</p>
                 <div className="flex justify-center my-3">
                   <StarRating rating={Math.round(avgRating)} />
                 </div>
@@ -160,7 +160,7 @@ export default function ReviewsPage() {
 
       {/* Breadcrumb */}
       <div className="bg-[#1C2C3A] border-b border-[#C89249]/15">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 text-sm">
             <button onClick={() => navigate('home')} className="text-white/50 hover:text-[#C89249] transition-colors">Home</button>
             <span className="text-white/25">/</span>
@@ -168,14 +168,14 @@ export default function ReviewsPage() {
           </div>
           <button
             onClick={handleWriteReview}
-            className="bg-[#C89249] hover:bg-[#E0B368] text-[#14202B] font-bold px-5 py-2 rounded-lg text-sm transition-all"
+            className="bg-[#C89249] hover:bg-[#E0B368] text-[#14202B] font-bold px-4 sm:px-5 py-2 rounded-lg text-sm whitespace-nowrap transition-all"
           >
             Write a Review
           </button>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         {/* Success message */}
         {submitted && (
           <div className="mb-8 bg-green-500/10 border border-green-500/30 rounded-2xl p-6 text-center">
@@ -208,7 +208,7 @@ export default function ReviewsPage() {
 
         {/* Review Form */}
         {showForm && (
-          <div className="mb-12 bg-[#1C2C3A] border border-[#C89249]/25 rounded-2xl p-8">
+          <div className="mb-12 bg-[#1C2C3A] border border-[#C89249]/25 rounded-2xl p-5 sm:p-8">
             <h3 className="text-white font-bold text-xl mb-6">Write Your Review</h3>
             {submitError && (
               <div className="bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3 mb-6 text-red-400 text-sm">
@@ -238,7 +238,7 @@ export default function ReviewsPage() {
                 className="w-full bg-[#14202B] border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm resize-none"
               />
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <button onClick={handleSubmit} disabled={submitting || !reviewText.trim()} className="bg-[#C89249] hover:bg-[#E0B368] disabled:opacity-60 text-[#14202B] font-bold px-8 py-3 rounded-xl transition-all">
                 {submitting ? 'Submitting...' : 'Submit Review'}
               </button>
@@ -280,7 +280,7 @@ export default function ReviewsPage() {
                       <p className="text-[#20262E]/50 text-xs">{r.reviewer_company || 'Customer'}</p>
                     </div>
                   </div>
-                  {user?.id === r.user_id && (
+                  {user && Number(user.id) === Number(r.user_id) && (
                     <button
                       onClick={() => handleDelete(r.id)}
                       disabled={deletingId === r.id}
@@ -294,7 +294,7 @@ export default function ReviewsPage() {
                   <StarRating rating={r.rating} />
                 </div>
                 {r.title && <p className="text-[#14202B] font-bold text-sm mb-1">{r.title}</p>}
-                <p className="text-[#20262E]/65 text-sm leading-relaxed mb-4">"{r.comment}"</p>
+                <p className="text-[#20262E]/65 text-sm leading-relaxed mb-4 break-words">"{r.comment}"</p>
                 <p className="text-[#20262E]/35 text-xs">{formatDate(r.created_at)}</p>
               </div>
             ))}

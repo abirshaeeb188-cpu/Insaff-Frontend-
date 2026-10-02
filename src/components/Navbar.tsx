@@ -35,6 +35,17 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
+
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false) }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   const isHeroPage = ['home', 'about', 'services'].includes(currentPage)
   const navBg = scrolled || !isHeroPage
     ? 'bg-[#14202B]/95 backdrop-blur-md border-b border-[#C89249]/20 shadow-lg shadow-black/20'
@@ -137,8 +148,8 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="md:hidden bg-[#14202B] border-t border-[#C89249]/20">
-            <div className="px-4 py-4 space-y-1">
+          <div className="md:hidden bg-[#14202B] border-t border-[#C89249]/20 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain">
+            <div className="px-4 py-4 pb-8 space-y-1">
               {navLinks.map(({ label, page }) => (
                 <button
                   key={page}
@@ -156,12 +167,12 @@ export default function Navbar() {
                 {user ? (
                   <div className="space-y-1">
                     <div className="flex items-center gap-3 px-4 py-3">
-                      <div className="w-9 h-9 rounded-full bg-[#C89249] flex items-center justify-center">
+                      <div className="w-9 h-9 rounded-full bg-[#C89249] flex items-center justify-center flex-shrink-0">
                         <span className="text-[#14202B] font-bold text-sm">{user.name.charAt(0)}</span>
                       </div>
-                      <div>
-                        <p className="text-white font-semibold text-sm">{user.name}</p>
-                        <p className="text-white/50 text-xs">{user.email}</p>
+                      <div className="min-w-0">
+                        <p className="text-white font-semibold text-sm truncate">{user.name}</p>
+                        <p className="text-white/50 text-xs truncate">{user.email}</p>
                       </div>
                     </div>
                     <button onClick={() => { navigate('profile'); setMobileOpen(false) }} className="w-full flex items-center gap-3 text-left px-4 py-2.5 rounded-xl text-sm text-white/80 hover:bg-white/5"><IconUser className="w-4 h-4" /> Profile</button>
@@ -189,6 +200,15 @@ export default function Navbar() {
           </div>
         )}
       </nav>
+
+      {/* Mobile menu backdrop: covers page + floating buttons, tap to close */}
+      {mobileOpen && (
+        <div
+          className="md:hidden fixed inset-0 z-[45] bg-black/60"
+          onClick={() => setMobileOpen(false)}
+          aria-hidden="true"
+        />
+      )}
 
       {/* Logout Confirmation Modal */}
       {logoutModal && (
