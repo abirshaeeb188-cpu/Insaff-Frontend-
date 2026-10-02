@@ -83,7 +83,7 @@ export default function EmailVerificationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#14202B] flex items-center justify-center p-6 pt-24">
+    <div className="min-h-screen bg-[#14202B] flex items-center justify-center p-4 sm:p-6 py-10 sm:pt-24">
       <div className="w-full max-w-md mx-auto">
         <div className="flex flex-col items-center text-center mb-8">
           <img
@@ -106,7 +106,7 @@ export default function EmailVerificationPage() {
           </p>
         </div>
 
-        <div className="bg-[#1C2C3A] border border-[#C89249]/20 rounded-2xl p-8 shadow-2xl">
+        <div className="bg-[#1C2C3A] border border-[#C89249]/20 rounded-2xl p-5 sm:p-8 shadow-2xl">
           {error && (
             <div className="bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3 mb-6 text-red-400 text-sm">
               {error}

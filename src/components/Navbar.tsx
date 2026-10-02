@@ -37,7 +37,11 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    document.body.classList.toggle('menu-open', mobileOpen)
+    return () => {
+      document.body.style.overflow = ''
+      document.body.classList.remove('menu-open')
+    }
   }, [mobileOpen])
 
   useEffect(() => {
@@ -148,7 +152,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="md:hidden bg-[#14202B] border-t border-[#C89249]/20 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain">
+          <div className="md:hidden bg-[#14202B] border-t border-[#C89249]/20 h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain">
             <div className="px-4 py-4 pb-8 space-y-1">
               {navLinks.map(({ label, page }) => (
                 <button

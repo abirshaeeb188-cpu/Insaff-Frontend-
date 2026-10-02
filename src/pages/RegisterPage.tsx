@@ -77,7 +77,7 @@ export default function RegisterPage() {
           <img
             src={logoImg}
             alt="INSAF"
-            className="h-24 w-auto rounded-full object-contain mb-8 shadow-lg"
+            className="h-24 w-auto mx-auto rounded-full object-contain mb-8 shadow-lg"
           />
           <h2 className="text-3xl font-extrabold text-white mb-4">
             Join Our Network
@@ -116,7 +116,7 @@ export default function RegisterPage() {
       </div>
 
       {/* Form */}
-      <div className="flex-1 flex flex-col p-6 pt-8 lg:pt-8">
+      <div className="flex-1 flex flex-col p-4 sm:p-6 pt-6 sm:pt-8">
         <button
           type="button"
           onClick={() => navigate('home')}
@@ -138,14 +138,14 @@ export default function RegisterPage() {
 
         <div className="flex-1 flex items-center justify-center">
           <div className="w-full max-w-md">
-            <div className="lg:hidden text-center mb-8">
+            <div className="lg:hidden text-center mb-6">
               <img
                 src={logoImg}
                 alt="INSAF"
-                className="h-16 w-auto rounded-full object-contain mb-4 shadow-md"
+                className="h-20 w-auto mx-auto rounded-full object-contain mb-2 shadow-md"
               />
             </div>
-            <div className="bg-[#1C2C3A] border border-[#C89249]/20 rounded-2xl p-8 shadow-2xl">
+            <div className="bg-[#1C2C3A] border border-[#C89249]/20 rounded-2xl p-5 sm:p-8 shadow-2xl">
               <h1 className="text-2xl font-extrabold text-white mb-1">
                 Create Your Account
               </h1>

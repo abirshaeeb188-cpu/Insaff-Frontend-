@@ -1,6 +1,6 @@
 export default function FloatingButtons() {
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col gap-2.5 sm:gap-3">
+    <div className="floating-buttons fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col gap-2.5 sm:gap-3">
       {/* WhatsApp */}
       <a
         href="https://wa.me/971566300173"

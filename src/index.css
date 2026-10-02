@@ -127,3 +127,6 @@ input:focus, textarea:focus, select:focus {
   height: 2px;
   background: linear-gradient(90deg, #C89249, rgba(217, 164, 65, 0.2));
 }
+
+/* Hide WhatsApp/Call buttons while the mobile menu is open */
+body.menu-open .floating-buttons { display: none; }

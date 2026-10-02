@@ -26,15 +26,15 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#14202B] flex items-center justify-center p-6 pt-24">
+    <div className="min-h-screen bg-[#14202B] flex items-center justify-center p-4 sm:p-6 py-10 sm:pt-24">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <img src={logoImg} alt="INSAF" className="h-20 w-auto rounded-full object-contain mb-6 shadow-lg" />
+          <img src={logoImg} alt="INSAF" className="h-20 w-auto mx-auto rounded-full object-contain mb-6 shadow-lg" />
           <h1 className="text-3xl font-extrabold text-white mb-2">Forgot Password?</h1>
           <p className="text-white/45 text-sm">Enter your email and we'll send you a reset code</p>
         </div>
 
-        <div className="bg-[#1C2C3A] border border-[#C89249]/20 rounded-2xl p-8 shadow-2xl">
+        <div className="bg-[#1C2C3A] border border-[#C89249]/20 rounded-2xl p-5 sm:p-8 shadow-2xl">
           {sent ? (
             <div className="text-center py-4">
               <div className="w-16 h-16 bg-[#C89249]/10 rounded-full flex items-center justify-center mx-auto mb-5">
