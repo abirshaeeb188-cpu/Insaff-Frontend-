@@ -1,12 +1,12 @@
 export default function FloatingButtons() {
   return (
-    <div className="floating-buttons fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col gap-2.5 sm:gap-3">
+    <div className="floating-buttons z-40 flex flex-col gap-2.5 sm:gap-3">
       {/* WhatsApp */}
       <a
         href="https://wa.me/971566300173"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] hover:bg-[#20ba5a] rounded-full flex items-center justify-center shadow-xl shadow-[#25D366]/40 transition-all duration-300 hover:scale-110 group relative"
+        className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-[#25D366] hover:bg-[#20ba5a] rounded-full flex items-center justify-center shadow-xl shadow-[#25D366]/40 transition-all duration-300 hover:scale-110 group relative"
         aria-label="WhatsApp"
       >
         <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -20,10 +20,10 @@ export default function FloatingButtons() {
       {/* Phone */}
       <a
         href="tel:+971509838681"
-        className="w-12 h-12 sm:w-14 sm:h-14 bg-[#C89249] hover:bg-[#E0B368] rounded-full flex items-center justify-center shadow-xl shadow-[#C89249]/40 transition-all duration-300 hover:scale-110 group relative"
+        className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-[#C89249] hover:bg-[#E0B368] rounded-full flex items-center justify-center shadow-xl shadow-[#C89249]/40 transition-all duration-300 hover:scale-110 group relative"
         aria-label="Call us"
       >
-        <svg className="w-6 h-6 text-[#14202B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#14202B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
         </svg>
         <span className="absolute right-full mr-3 bg-[#14202B] text-white text-xs font-semibold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg border border-white/10">

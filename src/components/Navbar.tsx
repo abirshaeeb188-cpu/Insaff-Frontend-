@@ -218,7 +218,7 @@ export default function Navbar() {
       {logoutModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setLogoutModal(false)} />
-          <div className="relative bg-[#1C2C3A] border border-[#C89249]/25 rounded-2xl p-8 max-w-sm w-full shadow-2xl">
+          <div className="relative bg-[#1C2C3A] border border-[#C89249]/25 rounded-2xl p-6 sm:p-8 max-w-sm w-full shadow-2xl">
             <div className="text-center">
               <div className="w-16 h-16 bg-red-500/15 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

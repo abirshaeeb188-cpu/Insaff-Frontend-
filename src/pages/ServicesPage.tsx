@@ -53,14 +53,14 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[480px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[420px] sm:min-h-[480px] pt-24 pb-12 flex items-center justify-center overflow-hidden">
         <img src={heroImg} alt="Dump truck in desert landscape" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#14202B]/85 via-[#14202B]/75 to-[#14202B]" />
-        <div className="relative text-center">
+        <div className="relative text-center px-4">
           <p className="text-[#C89249] text-xs font-bold tracking-widest uppercase mb-4">What We Offer</p>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-4">Our Services</h1>
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-4">Our Services</h1>
           <div className="gold-divider mx-auto mb-6" />
-          <p className="text-white/60 text-lg max-w-2xl mx-auto px-4">Comprehensive construction material supply solutions for every project scale.</p>
+          <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto">Comprehensive construction material supply solutions for every project scale.</p>
         </div>
       </section>
 

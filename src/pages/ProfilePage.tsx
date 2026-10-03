@@ -56,7 +56,7 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-[#F8F6F2]">
       {/* Header */}
-      <div className="bg-[#14202B] pt-32 pb-16">
+      <div className="bg-[#14202B] pt-28 sm:pt-32 pb-12 sm:pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm mb-8">
             <button
@@ -67,14 +67,14 @@ export default function ProfilePage() {
             <span className="text-white/25">/</span>
             <span className="text-[#C89249]">My Profile</span>
           </div>
-          <h1 className="text-4xl font-extrabold text-white mb-2">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-2">
             My Profile
           </h1>
           <div className="gold-divider" />
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {saved && (
           <div className="mb-6 bg-green-500/10 border border-green-500/30 rounded-xl px-5 py-3 flex items-center gap-3">
             <svg
@@ -100,21 +100,21 @@ export default function ProfilePage() {
           </div>
         )}
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Profile Card */}
           <div className="lg:col-span-1">
-            <div className="bg-white border border-[#14202B]/8 rounded-2xl p-8 text-center shadow-sm">
+            <div className="bg-white border border-[#14202B]/8 rounded-2xl p-6 sm:p-8 text-center shadow-sm">
               <div className="mb-5">
-                <div className="w-28 h-28 bg-[#2C4356] rounded-full flex items-center justify-center mx-auto shadow-xl">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 bg-[#2C4356] rounded-full flex items-center justify-center mx-auto shadow-xl">
                   <span className="text-white text-4xl font-extrabold">
                     {user.name.charAt(0)}
                   </span>
                 </div>
               </div>
-              <h2 className="text-[#14202B] text-xl font-extrabold mb-1">
+              <h2 className="text-[#14202B] text-lg sm:text-xl font-extrabold mb-1 break-words">
                 {user.name}
               </h2>
-              <p className="text-[#20262E]/50 text-sm mb-1">{user.email}</p>
+              <p className="text-[#20262E]/50 text-sm mb-1 break-all">{user.email}</p>
               {user.phone && (
                 <p className="text-[#20262E]/40 text-xs">{user.phone}</p>
               )}
@@ -179,15 +179,15 @@ export default function ProfilePage() {
 
           {/* Edit Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white border border-[#14202B]/8 rounded-2xl p-8 shadow-sm">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-extrabold text-[#14202B]">
+            <div className="bg-white border border-[#14202B]/8 rounded-2xl p-5 sm:p-8 shadow-sm">
+              <div className="flex items-center justify-between gap-3 mb-6">
+                <h3 className="text-lg sm:text-xl font-extrabold text-[#14202B]">
                   Personal Information
                 </h3>
                 {!editing && (
                   <button
                     onClick={() => setEditing(true)}
-                    className="flex items-center gap-2 text-sm font-semibold text-[#2C4356] hover:text-[#C89249] transition-colors">
+                    className="flex items-center gap-2 shrink-0 text-sm font-semibold text-[#2C4356] hover:text-[#C89249] transition-colors">
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -206,7 +206,7 @@ export default function ProfilePage() {
               </div>
 
               <div className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
                   <div>
                     <label className="text-[#20262E]/60 text-xs font-bold uppercase tracking-wide block mb-2">
                       Full Name
@@ -220,7 +220,7 @@ export default function ProfilePage() {
                         className="w-full border border-[#14202B]/15 rounded-xl px-4 py-3 text-sm text-[#14202B] bg-[#F8F6F2]"
                       />
                     ) : (
-                      <p className="text-[#14202B] font-semibold py-3 border-b border-[#14202B]/8">
+                      <p className="text-[#14202B] font-semibold py-3 border-b border-[#14202B]/8 break-words">
                         {user.name}
                       </p>
                     )}
@@ -229,7 +229,7 @@ export default function ProfilePage() {
                     <label className="text-[#20262E]/60 text-xs font-bold uppercase tracking-wide block mb-2">
                       Email Address
                     </label>
-                    <p className="text-[#14202B] font-semibold py-3 border-b border-[#14202B]/8">
+                    <p className="text-[#14202B] font-semibold py-3 border-b border-[#14202B]/8 break-words">
                       {user.email}
                     </p>
                     {editing && (
@@ -253,7 +253,7 @@ export default function ProfilePage() {
                       className="w-full border border-[#14202B]/15 rounded-xl px-4 py-3 text-sm text-[#14202B] bg-[#F8F6F2]"
                     />
                   ) : (
-                    <p className="text-[#14202B] font-semibold py-3 border-b border-[#14202B]/8">
+                    <p className="text-[#14202B] font-semibold py-3 border-b border-[#14202B]/8 break-words">
                       {user.phone || '—'}
                     </p>
                   )}
@@ -261,7 +261,7 @@ export default function ProfilePage() {
               </div>
 
               {editing && (
-                <div className="flex gap-3 mt-8">
+                <div className="flex flex-col sm:flex-row gap-3 mt-8">
                   <button
                     onClick={handleSave}
                     disabled={saving}

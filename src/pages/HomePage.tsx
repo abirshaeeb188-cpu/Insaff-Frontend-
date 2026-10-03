@@ -32,24 +32,24 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[640px] flex items-center overflow-hidden">
+      <section className="relative min-h-[600px] sm:min-h-[640px] pt-28 pb-16 sm:py-24 flex items-center overflow-hidden">
         <img src={heroSand} alt="Sand and aggregate quarry" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#14202B]/95 via-[#14202B]/80 to-[#14202B]/40" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-xl">
             <p className="text-[#C89249] text-xs font-bold tracking-widest uppercase mb-4">Insaf Sand Trading Company LLC SPC</p>
-            <h1 className="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-6">
+            <h1 className="text-[2rem] min-[400px]:text-4xl sm:text-6xl [@media(max-height:480px)]:!text-3xl font-extrabold text-white leading-tight mb-6">
               Reliable Sand & <span className="text-gold-gradient">Construction Material</span> Supply
             </h1>
             <div className="gold-divider mb-6" />
-            <p className="text-white/60 text-lg mb-10 leading-relaxed">
+            <p className="text-white/60 text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed">
               Sourcing and delivering premium sand, gravel, aggregate, cement and blocks for construction and infrastructure projects across the UAE.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <button onClick={() => navigate('register')} className="bg-[#C89249] hover:bg-[#E0B368] text-[#14202B] font-bold px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-[#C89249]/25">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
+              <button onClick={() => navigate('register')} className="bg-[#C89249] hover:bg-[#E0B368] text-[#14202B] font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-[#C89249]/25">
                 Let's Start
               </button>
-              <button onClick={() => navigate('services')} className="border border-white/25 hover:border-white text-white font-semibold px-8 py-4 rounded-xl transition-all">
+              <button onClick={() => navigate('services')} className="border border-white/25 hover:border-white text-white font-semibold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all">
                 Our Services
               </button>
             </div>
@@ -59,10 +59,10 @@ export default function HomePage() {
 
       {/* Stats */}
       <section className="bg-[#1C2C3A] py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map(s => (
             <div key={s.label} className="text-center">
-              <p className="text-4xl font-extrabold text-[#C89249] mb-1">{s.value}</p>
+              <p className="text-3xl sm:text-4xl font-extrabold text-[#C89249] mb-1">{s.value}</p>
               <p className="text-white/55 text-sm">{s.label}</p>
             </div>
           ))}
@@ -71,10 +71,10 @@ export default function HomePage() {
 
       {/* About Snapshot */}
       <section className="bg-[#F8F6F2] section-padding">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div className="relative">
             <div className="absolute -inset-2 bg-[#C89249]/10 rounded-3xl" />
-            <img src={aboutImg} alt="Aggregate stockpile" className="relative w-full h-96 object-cover rounded-2xl shadow-xl" />
+            <img src={aboutImg} alt="Aggregate stockpile" className="relative w-full h-64 sm:h-96 object-cover rounded-2xl shadow-xl" />
           </div>
           <div>
             <p className="text-[#C89249] text-xs font-bold tracking-widest uppercase mb-3">Who We Are</p>

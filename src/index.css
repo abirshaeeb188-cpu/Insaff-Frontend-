@@ -19,6 +19,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -26,6 +28,32 @@ body {
   background-color: #F8F6F2;
   color: #14202B;
   -webkit-font-smoothing: antialiased;
+  min-width: 320px;
+  /* Never allow sideways scrolling. If anything ever gets wider than the screen,
+     mobile browsers zoom the page out and push position:fixed buttons
+     (WhatsApp / Call) off-screen. `clip` is the modern, safe version of `hidden`. */
+  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-wrap: break-word;
+}
+
+/* Grid children may shrink below their content width, so long words,
+   e-mail addresses and images can't stretch the layout past the screen. */
+@layer base {
+  .grid > * {
+    min-width: 0;
+  }
+  img, svg, video, canvas, iframe {
+    max-width: 100%;
+  }
+}
+
+/* Prevent iOS Safari from zooming the page when a form field is focused.
+   (Kept outside @layer so it wins over Tailwind's text-sm on inputs.) */
+@media (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px;
+  }
 }
 
 /* Hide scrollbar while keeping functionality */
@@ -126,6 +154,25 @@ input:focus, textarea:focus, select:focus {
   width: calc(100% - 80px);
   height: 2px;
   background: linear-gradient(90deg, #C89249, rgba(217, 164, 65, 0.2));
+}
+
+/* WhatsApp / Call floating buttons — always pinned inside the visible screen,
+   respecting notches, rounded corners and the iOS home-indicator. */
+.floating-buttons {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+}
+@media (min-width: 640px) {
+  .floating-buttons {
+    right: max(1.5rem, env(safe-area-inset-right));
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+}
+/* Short landscape phones: make them a bit smaller so they never cover content */
+@media (max-height: 480px) and (orientation: landscape) {
+  .floating-buttons { gap: 0.5rem; }
+  .floating-buttons > a { width: 2.5rem; height: 2.5rem; }
 }
 
 /* Hide WhatsApp/Call buttons while the mobile menu is open */

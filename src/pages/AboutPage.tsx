@@ -22,12 +22,12 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[420px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[360px] sm:min-h-[420px] pt-24 pb-12 flex items-center justify-center overflow-hidden">
         <img src={aboutHero} alt="Aggregate storage yard" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#14202B]/85 via-[#14202B]/75 to-[#14202B]" />
-        <div className="relative text-center">
+        <div className="relative text-center px-4">
           <p className="text-[#C89249] text-xs font-bold tracking-widest uppercase mb-4">Get To Know Us</p>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-4">About Us</h1>
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-4">About Us</h1>
           <div className="gold-divider mx-auto" />
         </div>
       </section>
@@ -45,10 +45,10 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="bg-[#F8F6F2] section-padding">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div className="relative">
             <div className="absolute -inset-2 bg-[#C89249]/10 rounded-3xl" />
-            <img src={storyImg} alt="Quarry operations" className="relative w-full h-96 object-cover rounded-2xl shadow-xl" />
+            <img src={storyImg} alt="Quarry operations" className="relative w-full h-64 sm:h-96 object-cover rounded-2xl shadow-xl" />
           </div>
           <div>
             <p className="text-[#C89249] text-xs font-bold tracking-widest uppercase mb-3">Our Story</p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-3 gap-6">
             {values.map(v => (
-              <div key={v.title} className="bg-[#F8F6F2] border border-[#14202B]/8 rounded-2xl p-8 text-center">
+              <div key={v.title} className="bg-[#F8F6F2] border border-[#14202B]/8 rounded-2xl p-6 sm:p-8 text-center">
                 <div className="w-14 h-14 rounded-xl bg-[#C89249]/15 flex items-center justify-center mx-auto mb-4">
                   <v.icon className="w-7 h-7 text-[#C89249]" />
                 </div>
@@ -83,13 +83,13 @@ export default function AboutPage() {
 
       {/* Timeline + Image */}
       <section className="bg-[#F8F6F2] section-padding">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div>
             <p className="text-[#C89249] text-xs font-bold tracking-widest uppercase mb-3">Our Journey</p>
-            <h2 className="text-3xl font-extrabold text-[#14202B] mb-6">How We Got Here</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14202B] mb-6">How We Got Here</h2>
             <div className="space-y-6">
               {timeline.map((t, i) => (
-                <div key={i} className="flex gap-5">
+                <div key={i} className="flex gap-4 sm:gap-5">
                   <div className="w-10 h-10 rounded-full bg-[#C89249]/15 flex items-center justify-center text-[#C89249] font-bold flex-shrink-0">{i + 1}</div>
                   <div>
                     <p className="font-bold text-[#14202B] mb-1">{t.year}</p>
@@ -101,7 +101,7 @@ export default function AboutPage() {
           </div>
           <div className="relative">
             <div className="absolute -inset-2 bg-[#C89249]/10 rounded-3xl" />
-            <img src={blockImg} alt="Concrete blocks ready for delivery" className="relative w-full h-96 object-cover rounded-2xl shadow-xl" />
+            <img src={blockImg} alt="Concrete blocks ready for delivery" className="relative w-full h-64 sm:h-96 object-cover rounded-2xl shadow-xl" />
           </div>
         </div>
       </section>
@@ -111,8 +111,8 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-extrabold text-white mb-4">Let's Work Together</h2>
           <p className="text-white/55 mb-8">Reach out to discuss your material needs and become one of our trusted partners.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button onClick={() => navigate('register')} className="bg-[#C89249] hover:bg-[#E0B368] text-[#14202B] font-bold px-8 py-4 rounded-xl transition-all hover:-translate-y-0.5">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <button onClick={() => navigate('register')} className="bg-[#C89249] hover:bg-[#E0B368] text-[#14202B] font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all hover:-translate-y-0.5">
               Let's Start
             </button>
             <button onClick={() => navigate('contact')} className="border border-white/20 hover:border-white text-white font-semibold px-8 py-4 rounded-xl transition-all">
