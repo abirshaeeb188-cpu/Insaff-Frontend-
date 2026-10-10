@@ -1,10 +1,10 @@
 import { useApp } from '../context/AppContext'
 import { IconShieldCheck, IconTruck, IconTag, IconUsers } from '../components/Icons'
-import heroSand from '../imports/IMG-20260924-WA0018.jpg'
-import aboutImg from '../imports/IMG-20260924-WA0025.jpg'
-import gravelImg from '../imports/IMG-20260924-WA0014.jpg'
-import sandImg from '../imports/IMG-20260924-WA0019.jpg'
-import blockImg from '../imports/IMG-20260924-WA0023.jpg'
+import heroSand from '../imports/BlackSandPure.jpg'
+import aboutImg from '../imports/Aggregate-34.jpg'
+import gravelImg from '../imports/Aggregate-38.jpg'
+import sandImg from '../imports/Cements.jpg'
+import blockImg from '../imports/Block.jpg'
 
 const stats = [
   { value: '10+', label: 'Years of Experience' },

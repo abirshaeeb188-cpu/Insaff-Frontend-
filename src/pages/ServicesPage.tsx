@@ -1,20 +1,19 @@
 import { useApp } from '../context/AppContext'
 import { IconSand, IconGravel, IconBlocks, IconCement, IconTruck, IconSettings } from '../components/Icons'
-import img14 from '../imports/IMG-20260924-WA0014.jpg'
-import img15 from '../imports/IMG-20260924-WA0015.jpg'
-import img16 from '../imports/IMG-20260924-WA0016.jpg'
-import img17 from '../imports/IMG-20260924-WA0017.jpg'
-import img18 from '../imports/IMG-20260924-WA0018.jpg'
-import img19 from '../imports/IMG-20260924-WA0019.jpg'
-import img20 from '../imports/IMG-20260924-WA0020.jpg'
-import img21 from '../imports/IMG-20260924-WA0021.jpg'
-import img22 from '../imports/IMG-20260924-WA0022.jpg'
-import img23 from '../imports/IMG-20260924-WA0023.jpg'
-import img24 from '../imports/IMG-20260924-WA0024.jpg'
-import img25 from '../imports/IMG-20260924-WA0025.jpg'
-import img26 from '../imports/IMG-20260924-WA0026.jpg'
-import img27 from '../imports/IMG-20260924-WA0027.jpg'
-import img28 from '../imports/IMG-20260924-WA0028.jpg'
+import imgAgg34 from '../imports/Aggregate-34.jpg'
+import imgAgg38 from '../imports/Aggregate-38.jpg'
+import imgAgg316 from '../imports/Aggregate-316.jpg'
+import imgBlackSand from '../imports/Black-Sand.jpg'
+import imgBlackSandPure from '../imports/BlackSandPure.jpg'
+import imgBlock from '../imports/Block.jpg'
+import imgCement from '../imports/Cements.jpg'
+import imgGutchPure from '../imports/GutchPure.jpg'
+import imgRedSand from '../imports/Red-Sand.jpg'
+import imgRoadBaseRecycle from '../imports/RoadBaseRecycle.jpg'
+import imgRoadBasePure from '../imports/RoadbasePure.jpg'
+import imgSevahanSand from '../imports/Sevahan-Sand.jpg'
+import imgUsedBasco from '../imports/UsedBasco.jpg'
+import imgWhiteSand from '../imports/White-Sand.jpg'
 
 const heroImg = 'https://images.unsplash.com/photo-1782421932252-dbca02aae506?w=1800&h=600&fit=crop&auto=format'
 
@@ -28,23 +27,22 @@ const serviceCategories = [
   { icon: IconSettings, title: 'Custom Solutions', desc: 'Mixed loads & bespoke supply programs for any project.' },
 ]
 
-// Every material photo as its own product card (all 15 site images used)
+// Every material photo as its own product card (title = image file name)
 const materials = [
-  { img: img14, title: 'Crushed Aggregate', tag: 'Gravel', desc: 'Angular crushed grey aggregate, graded for concrete mixing and structural fill.' },
-  { img: img15, title: 'Quarry Dust', tag: 'Aggregate', desc: 'Fine dark aggregate / crusher dust, ideal for base layers and compaction fill.' },
-  { img: img16, title: 'Red Sand', tag: 'Sand', desc: 'Natural reddish sand suited for backfilling and general earthworks.' },
-  { img: img17, title: 'Filling Sand', tag: 'Sand', desc: 'Coarse beige sand for site filling, levelling and general construction use.' },
-  { img: img18, title: 'Quarry Sand & Rock Mix', tag: 'Sand', desc: 'Freshly quarried sand with natural rock content, sourced on-site.' },
-  { img: img19, title: 'Washed Sand', tag: 'Sand', desc: 'Clean, screened sand suitable for plastering, grouting and concrete work.' },
-  { img: img20, title: 'Screened Sand', tag: 'Sand', desc: 'Fine screened sand stockpiled at the quarry, ready for bulk loading.' },
-  { img: img21, title: 'Interlocking Pavers', tag: 'Blocks', desc: 'Precast interlocking paver blocks, freshly cured and ready for dispatch.' },
-  { img: img22, title: 'Graded Aggregate', tag: 'Gravel', desc: 'Uniformly graded grey aggregate stockpiled at our storage yard.' },
-  { img: img23, title: 'Solid Concrete Blocks', tag: 'Blocks', desc: 'Strapped pallets of solid concrete masonry blocks, factory-fresh.' },
-  { img: img24, title: 'Portland Cement (OPC 42.5)', tag: 'Cement', desc: 'RAKCC Portland cement, 50kg bags, ISO 9001:2015 certified quality.' },
-  { img: img25, title: 'Bulk Aggregate Stockpile', tag: 'Gravel', desc: 'Large-volume aggregate reserves maintained for uninterrupted supply.' },
-  { img: img26, title: 'Premium Crushed Stone', tag: 'Gravel', desc: 'Hand-tested crushed stone sample showing consistent size grading.' },
-  { img: img27, title: 'Fine Crushed Aggregate', tag: 'Aggregate', desc: 'Finely crushed aggregate mix, suited for road base and drainage layers.' },
-  { img: img28, title: 'SolidMix Concrete Blocks', tag: 'Blocks', desc: 'Branded SolidMix concrete blocks, strapped and palletized for delivery.' },
+  { img: imgAgg34, title: 'Aggregate 3/4', tag: 'Aggregate', desc: 'Crushed grey aggregate, 3/4 inch grade, for concrete, structural fill and drainage.' },
+  { img: imgAgg38, title: 'Aggregate 3/8', tag: 'Aggregate', desc: 'Crushed grey aggregate, 3/8 inch grade, for concrete mixes and block production.' },
+  { img: imgAgg316, title: 'Aggregate 3/16', tag: 'Aggregate', desc: 'Fine crushed aggregate, 3/16 inch grade, for asphalt, screeding and finishing work.' },
+  { img: imgBlackSand, title: 'Black Sand', tag: 'Sand', desc: 'Dark sand, suited for backfilling, levelling and general earthworks.' },
+  { img: imgBlackSandPure, title: 'Black Sand Pure', tag: 'Sand', desc: 'Clean, pure black sand stockpiled at our yard, ready for bulk loading.' },
+  { img: imgBlock, title: 'Block', tag: 'Blocks', desc: 'Solid concrete masonry blocks, strapped and palletized for delivery.' },
+  { img: imgCement, title: 'Cement', tag: 'Cement', desc: 'RAKCC Portland cement, 50kg bags, ISO 9001:2015 certified quality.' },
+  { img: imgGutchPure, title: 'Gutch Pure', tag: 'Gravel', desc: 'Pure gutch material for site filling, sub-base and levelling.' },
+  { img: imgRedSand, title: 'Red Sand', tag: 'Sand', desc: 'Natural red sand suited for backfilling and general earthworks.' },
+  { img: imgRoadBaseRecycle, title: 'Road Base Recycle', tag: 'Gravel', desc: 'Recycled road base material for sub-base layers and compaction fill.' },
+  { img: imgRoadBasePure, title: 'Road Base Pure', tag: 'Gravel', desc: 'Pure road base material, well graded for road and pavement construction.' },
+  { img: imgSevahanSand, title: 'Sevahan Sand', tag: 'Sand', desc: 'Fine golden Sevahan sand for plastering, filling and construction use.' },
+  { img: imgUsedBasco, title: 'Used Basco', tag: 'Blocks', desc: 'Used interlocking basco pavers, economical option for paving and landscaping.' },
+  { img: imgWhiteSand, title: 'White Sand', tag: 'Sand', desc: 'Clean white sand suitable for plastering, grouting and concrete work.' },
 ]
 
 export default function ServicesPage() {

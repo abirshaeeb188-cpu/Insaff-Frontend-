@@ -1,8 +1,8 @@
 import { useApp } from '../context/AppContext'
 import { IconTarget, IconEye, IconStar } from '../components/Icons'
-import aboutHero from '../imports/IMG-20260924-WA0022.jpg'
-import storyImg from '../imports/IMG-20260924-WA0020.jpg'
-import blockImg from '../imports/IMG-20260924-WA0028.jpg'
+import aboutHero from '../imports/Aggregate-38.jpg'
+import storyImg from '../imports/GutchPure.jpg'
+import blockImg from '../imports/Block.jpg'
 
 const values = [
   { icon: IconTarget, title: 'Our Mission', desc: 'To be the most reliable construction material supplier in the UAE, delivering quality products on time, every time.' },
